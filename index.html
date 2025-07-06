@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DediClean - Services de Ménage Professionnels</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Reset et styles de base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff5f7;
+    }
+
+    .container {
+      width: 85%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(rgba(233, 30, 99, 0.8), rgba(233, 30, 99, 0.8)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 20px 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #ffebee;
+    }
+
+    .logo span {
+      color: white;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-left: 30px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ffebee;
+      text-decoration: underline;
+    }
+
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 50px 0;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ff4081;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background: #e91e63;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: #e91e63;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(233, 30, 99, 0.1);
+      transition: all 0.3s;
+      border: 1px solid #ffe0e9;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(233, 30, 99, 0.2);
+    }
+
+    .service-img {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .service-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .service-card:hover .service-img img {
+      transform: scale(1.1);
+    }
+
+    .service-content {
+      padding: 25px;
+    }
+
+    .service-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #e91e63;
+    }
+
+    .service-content p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      color: #e91e63;
+      margin-bottom: 15px;
+    }
+
+    /* Témoignages */
+    .testimonials {
+      background: linear-gradient(135deg, #e91e63, #ff4081);
+      color: white;
+    }
+
+    .testimonials .section-title h2 {
+      color: white;
+    }
+
+    .testimonials .section-title p {
+      color: #ffebee;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      margin-bottom: 20px;
+      position: relative;
+      font-size: 1rem;
+    }
+
+    .testimonial-card p::before,
+    .testimonial-card p::after {
+      content: '"';
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .client-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .client-info img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+      object-fit: cover;
+      border: 2px solid white;
+    }
+
+    .client-name h4 {
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+
+    .client-name p {
+      font-style: normal;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin: 0;
+    }
+
+    /* Contact */
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: #fff5f7;
+      padding: 20px 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(233, 30, 99, 0.1);
+      min-width: 250px;
+    }
+
+    .contact-icon {
+      font-size: 1.5rem;
+      color: #e91e63;
+    }
+
+    .contact-text h3 {
+      color: #e91e63;
+      margin-bottom: 5px;
+      font-size: 1.2rem;
+    }
+
+    .contact-text a {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 1rem;
+    }
+
+    .contact-text a:hover {
+      color: #e91e63;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(233, 30, 99, 0.1);
+      border: 1px solid #ffe0e9;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #e91e63;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ffe0e9;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #fff9fa;
+    }
+
+    .form-group textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    .form-response {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      display: none;
+      font-size: 1rem;
+    }
+
+    .form-response.success {
+      background-color: #d4edda;
+      color: #155724;
+      display: block;
+    }
+
+    .form-response.error {
+      background-color: #f8d7da;
+      color: #721c24;
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      background: #e91e63;
+      color: white;
+      padding: 50px 0 20px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .footer-column h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: #ffebee;
+    }
+
+    .footer-column p,
+    .footer-column a {
+      color: #ffcdd2;
+      margin-bottom: 10px;
+      display: block;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 1rem;
+    }
+
+    .footer-column a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-links a {
+      color: #e91e63;
+      background: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      font-size: 1.2rem;
+    }
+
+    .social-links a:hover {
+      background: #ffebee;
+      transform: scale(1.1);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffcdd2;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .contact-item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header id="accueil">
+    <div class="container">
+      <nav>
+        <div class="logo">Dedi<span>Clean</span></div>
+        <ul class="nav-links">
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#temoignages">Témoignages</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero">
+        <h1>Votre logement impeccable avec DediClean</h1>
+        <p>Services de ménage professionnels pour Airbnb, logements principaux et plus encore. Faites confiance à des experts pour un nettoyage approfondi et personnalisé.</p>
+        <a href="#contact" class="btn">Demander un devis</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Nos Services</h2>
+        <p>Nous offrons une gamme complète de services de nettoyage adaptés à vos besoins spécifiques.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-img">
+            <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Nettoyage Airbnb">
+          </div>
+          <div class="service-content">
+            <div class="service-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <h3>Nettoyage Airbnb</h3>
+            <p>Service complet pour préparer votre logement entre chaque location. Nous nous chargeons de tout pour que vos invités trouvent un espace parfaitement propre.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-img">
+            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Ménage régulier">
+          </div>
+          <div class="service-content">
+            <div class="service-icon">
+              <i class="fas fa-broom"></i>
+            </div>
+            <h3>Ménage régulier</h3>
+            <p>Entretien hebdomadaire ou mensuel de votre logement principal. Un programme personnalisé pour maintenir votre espace de vie toujours impeccable.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-img">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Nettoyage approfondi">
+          </div>
+          <div class="service-content">
+            <div class="service-icon">
+              <i class="fas fa-broom"></i>
+            </div>
+            <h3>Nettoyage approfondi</h3>
+            <p>Un nettoyage en profondeur pour les recoins souvent négligés. Parfait pour le printemps, un déménagement ou après des travaux.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Témoignages -->
+  <section class="testimonials" id="temoignages">
+    <div class="container">
+      <div class="section-title">
+        <h2>Témoignages</h2>
+        <p>Ce que nos clients disent de nos services</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p>DediClean a transformé la gestion de mon Airbnb. Le logement est toujours impeccable et mes invités sont ravis. Un vrai gain de temps et de sérénité !</p>
+          <div class="client-info">
+            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sophie M.">
+            <div class="client-name">
+              <h4>Sophie M.</h4>
+              <p>Propriétaire Airbnb</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p>Je fais appel à DediClean chaque semaine pour mon appartement. Leur travail est minutieux et elles sont toujours ponctuelles. Je recommande vivement !</p>
+          <div class="client-info">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Émilie T.">
+            <div class="client-name">
+              <h4>Émilie T.</h4>
+              <p>Particulière</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p>Après mes fêtes de fin d'année, j'ai fait appel à DediClean pour un grand nettoyage. Le résultat était exceptionnel, tout brillait comme jamais. Merci !</p>
+          <div class="client-info">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Caroline L.">
+            <div class="client-name">
+              <h4>Caroline L.</h4>
+              <p>Particulière</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contactez-nous</h2>
+        <p>Demandez un devis ou posez-nous vos questions</p>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="contact-text">
+            <h3>Téléphone</h3>
+            <a href="tel:0674230804">06 74 23 08 04</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-text">
+            <h3>Email</h3>
+            <a href="mailto:dedicirnessa@gmail.com">dedicirnessa@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="name">Nom complet</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Téléphone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+
+        <div class="form-group">
+          <label for="service">Service souhaité</label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Sélectionnez un service</option>
+            <option value="airbnb">Nettoyage Airbnb</option>
+            <option value="regulier">Ménage régulier</option>
+            <option value="approfondi">Nettoyage approfondi</option>
+            <option value="autre">Autre demande</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Envoyer la demande</button>
+        <div id="formResponse" class="form-response"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>DediClean</h3>
+          <p>Services de ménage professionnels pour particuliers et propriétaires Airbnb dans toute la région.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Liens rapides</h3>
+          <a href="#accueil">Accueil</a>
+          <a href="#services">Services</a>
+          <a href="#temoignages">Témoignages</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <a href="tel:0674230804"><i class="fas fa-phone-alt"></i> 06 74 23 08 04</a>
+          <a href="mailto:dedicirnessa@gmail.com"><i class="fas fa-envelope"></i> dedicirnessa@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>&copy; 2025 DediClean. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    // Initialisation EmailJS
+    (function() {
+      emailjs.init('o0W5KBTLiDALQ512c');
+    })();
+    // Gestion du formulaire
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const responseElement = document.getElementById('formResponse');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+      const formData = {
+        from_name: document.getElementById('name').value,
+        from_email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        service: document.getElementById('service').value,
+        message: document.getElementById('message').value,
+        to_email: 'dedicirnessa@gmail.com'
+      };
+      emailjs.send('service_lm0we9i', 'template_2jr5mle', formData)
+        .then(function() {
+          responseElement.className = 'form-response success';
+          responseElement.innerHTML = '<i class="fas fa-check-circle"></i> Message envoyé avec succès! Nous vous contacterons bientôt.';
+          document.getElementById('contactForm').reset();
+        }, function(error) {
+          responseElement.className = 'form-response error';
+          responseElement.innerHTML = '<i class="fas fa-exclamation-circle"></i> Une erreur est survenue. Veuillez nous appeler au 06 74 23 08 04.';
+          console.error('Erreur EmailJS:', error);
+        })
+        .finally(function() {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Envoyer la demande';
+        });
+    });
+    // Animation pour les ancres
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
